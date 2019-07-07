@@ -41,15 +41,22 @@ module.exports = function (ctx) {
         'QPage',
         'QToolbar',
         'QToolbarTitle',
+        'QSeparator',
         'QBtn',
         'QIcon',
+        'QCheckbox',
         'QList',
         'QItem',
         'QItemSection',
         'QItemLabel',
         'QTabs',
         'QTab',
-        'QRouteTab'
+        'QRouteTab',
+        'QList',
+        'QItem',
+        'QItemSection',
+        'QItemLabel',
+
       ],
 
       directives: [

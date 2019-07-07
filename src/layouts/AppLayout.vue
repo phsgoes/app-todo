@@ -2,21 +2,25 @@
   <q-layout view="lHh Lpr lFf">
 
     <q-header elevated>
-      <q-toolbar class="bg-teal-10">
+      <q-toolbar class="bg-primary">
         <q-btn flat dense round @click="leftDrawerOpen = !leftDrawerOpen" aria-label="Menu">
           <q-icon name="menu" />
         </q-btn>
 
-        <q-toolbar-title>
-          Quasar App
+        <q-toolbar-title class="absolute-center">
+          Todo App
         </q-toolbar-title>
 
-        <div>Quasar v{{ $q.version }}</div>
       </q-toolbar>
     </q-header>
 
-    <q-drawer v-model="leftDrawerOpen" bordered content-class="bg-grey-2">
-      <q-list>
+    <q-drawer
+      v-model="leftDrawerOpen"
+      bordered
+      content-class="bg-secondary"
+      :breakpoint="767.98"
+    > 
+      <q-list dark>
         <q-item-label header>Navigation</q-item-label>
         <q-item exact v-for="(item, index) in menu" :key="index" clickable :to="item.link">
           <q-item-section avatar>
@@ -30,7 +34,7 @@
       </q-list>
     </q-drawer>
 
-    <q-page-container>
+    <q-page-container class="bg-accent">
       <router-view />
     </q-page-container>
 
@@ -38,9 +42,8 @@
       <q-tabs
         dense
         v-model="tab"
-        class="bg-teal-10 text-grey shadow-2"
-        indicator-color="orange"
-        active-color="white"
+        class="bg-secondary"
+        active-color="brand"
         align="justify"
         :breakpoint="0"
       >
@@ -88,6 +91,3 @@ export default {
   }
 }
 </script>
-
-<style>
-</style>
