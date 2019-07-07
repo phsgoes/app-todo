@@ -5,7 +5,14 @@
         <q-list bordered dark>
           <q-item-label dark header v-text="'Tasks to be done'" />
 
-          <q-item dark v-for="item in tasks" :key="item.id" v-ripple>
+          <q-item
+            dark
+            v-for="item in tasks"
+            :key="item.id"
+            v-ripple
+            clickable
+            @click="item.completed = !item.completed"
+          >
             <q-item-section side top>
               <q-checkbox dark v-model="item.completed" />
             </q-item-section>
