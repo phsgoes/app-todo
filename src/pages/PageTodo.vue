@@ -19,7 +19,7 @@
 
             <q-item-section>
               <q-item-label v-text="item.name" />
-              <q-item-label caption v-text="item.description" />
+              <q-item-label caption v-text="formatDate(item.dueDate)" />
             </q-item-section>
           </q-item>
 
@@ -33,18 +33,22 @@
 </style>
 
 <script>
+import moment from 'moment'
 export default {
   name: 'PageTodo',
   data () {
     return {
       tasks: [
-        { id: 1, name: 'Go to store', description: 'Go to Walmart and grab an oil can', completed: false },
-        { id: 2, name: 'Jog at stadium', description: 'Start the exercise week, if possible...', completed: false },
-        { id: 3, name: 'Buy some eggs', description: 'We have to eat some proteins sometimes, haven\'t we?', completed: false },
-        { id: 4, name: 'Get the car', description: 'If it is fixed, go to Moe\'s car office', completed: false },
-        { id: 5, name: 'Go to university', description: 'Study to test', completed: false },
+        { id: 1, name: 'Go to store', dueDate: '2019-07-10', completed: false },
+        { id: 2, name: 'Jog at stadium', dueDate: '2019-07-10', completed: false },
+        { id: 3, name: 'Buy some eggs', dueDate: '2019-07-10', completed: false },
+        { id: 4, name: 'Get the car', dueDate: '2019-07-10', completed: false },
+        { id: 5, name: 'Go to university', dueDate: '2019-07-10', completed: false },
       ]
     }
+  },
+  methods: {
+    formatDate: date => moment(date).format('DD/MM/YYYY')
   }
 }
 </script>
